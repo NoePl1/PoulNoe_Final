@@ -73,7 +73,7 @@ public class Main {
 		* 1 - 2 planes 4 passengers
 		* 2 - 3 planes 4 passengers all in the same plane
 		* 3 - 1 plane  0 passengers
-		* 4 - 0 planes 1 passenger
+		* 4 - 0 plane  1 passenger
 		* 5 - 1 plane  1 passenger
 		* */
 		si.addInput("Scenario", List.of("5"));
