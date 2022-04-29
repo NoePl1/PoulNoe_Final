@@ -56,6 +56,15 @@ public class StatisticsContainer {
 	}
 
 	/**
+	 * Resets the StatisticsContainer
+	 * @return A statistics object.
+	 * */
+	public static StatisticsContainer resetInstance(SimulationInput si) {
+		StatisticsContainer.stats = new StatisticsContainer(si);
+		return StatisticsContainer.stats;
+	}
+
+	/**
 	 * Add a statistic component to the hash table.
 	 */
 	public Statistics addComponent (String component){
@@ -83,5 +92,6 @@ public class StatisticsContainer {
 			this.allStatistics.get(key).printStatistics();
 			System.out.println("\n\n");
 		}
+		System.out.println("-------END OF TEST------\n\n");
 	}
 }

@@ -22,8 +22,8 @@ public class Matrix {
 
         switch (input.getIntegerInput("Scenario")) {
             case 1:
-                Plane plane1 = new Plane("AC817",'b', input, runway);
-                Plane plane2 = new Plane("AF213",'b', input, runway);
+                Plane plane1 = new Plane("AC817",'l', input, runway);
+                Plane plane2 = new Plane("AF213",'t', input, runway);
                 Thread tp1 = new Thread(plane1);
                 Thread tp2 = new Thread(plane2);
 

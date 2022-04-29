@@ -3,7 +3,7 @@ package simulation.planes;
 /**
  * Boarding State
  */
-public class Boarding extends State{
+public class Boarding extends State {
 
     /**
      * Constructor

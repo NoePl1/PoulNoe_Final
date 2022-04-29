@@ -36,21 +36,8 @@ public class Main {
 	}
 
 	public static void main(String[] args) {
-		/*
-		You can either prepare your input as an array, or add it directly to your
-		Skeleton.SimulationInput object (see below).
 
-			ArrayList<ArrayList<String>> input = new ArrayList<ArrayList<String>>();
-			input.add(
-				// The time to run in seconds
-				new ArrayList<String>(Arrays.asList("Time", "600"))
-			);
-			input.add(
-				// The number of actions units must perform per second
-				new ArrayList<String>(Arrays.asList("ActionsPerSecond", "60"))
-			);
-		*/ 
-
+		//--------------TEST 1-----------------
 		SimulationInput si = new SimulationInput();
 
 		//Change these values to modify the duration and the number of actions per second of the simulation
@@ -84,14 +71,79 @@ public class Main {
 		// Post the finalized statistics
 		stats.printStatisticsContainer();
 
-		/*
-			Add many more tests below using different input. Try to probe for edge cases and organize
-			your tests properly.
-		*/
+		//--------------TEST 2-----------------
+		SimulationInput si2 = new SimulationInput();
 
-		// You can change the input, and then reset the statistics singleton with:
-		// input = new Skeleton.SimulationInput();
-		// // ... Add input
-		// si.resetInstance(input);
+		//Change these values to modify the duration and the number of actions per second of the simulation
+		si2.addInput("Time", List.of("20")); // In seconds
+		si2.addInput("ActionsPerSecond", List.of("1"));
+
+		//Change these values to change the minimum and maximum amount of money of the passengers
+		si2.addInput("MinMoney", List.of("0"));
+		si2.addInput("MaxMoney", List.of("1"));
+
+		//Change these values to modify the price of tickets and extras
+		si2.addInput("EconomyPrice", List.of("250"));
+		si2.addInput("BusinessPrice", List.of("1000"));
+		si2.addInput("FirstClassPrice", List.of("3000"));
+		si2.addInput("ExtraInsurancePrice", List.of("40"));
+		si2.addInput("ExtraLuggagePrice", List.of("100"));
+		si2.addInput("ExtraWindowSeatPrice", List.of("20"));
+
+		/*Change this value to select a scenario for testing
+		 * 1 - 2 planes 4 passengers
+		 * 2 - 3 planes 4 passengers all in the same plane
+		 * 3 - 1 plane  0 passengers
+		 * 4 - 0 plane  1 passenger
+		 * 5 - 1 plane  1 passenger
+		 * */
+		si2.addInput("Scenario", List.of("5"));
+
+		//Resets the stats container
+		StatisticsContainer.resetInstance(si2);
+
+		// Run the simulation
+		stats = runTest(si2);
+
+		// Post the finalized statistics
+		stats.printStatisticsContainer();
+
+		//--------------TEST 3-----------------
+		SimulationInput si3 = new SimulationInput();
+
+		//Change these values to modify the duration and the number of actions per second of the simulation
+		si3.addInput("Time", List.of("10")); // In seconds
+		si3.addInput("ActionsPerSecond", List.of("0"));
+
+		//Change these values to change the minimum and maximum amount of money of the passengers
+		si3.addInput("MinMoney", List.of("250"));
+		si3.addInput("MaxMoney", List.of("3000"));
+
+		//Change these values to modify the price of tickets and extras
+		si3.addInput("EconomyPrice", List.of("250"));
+		si3.addInput("BusinessPrice", List.of("1000"));
+		si3.addInput("FirstClassPrice", List.of("3000"));
+		si3.addInput("ExtraInsurancePrice", List.of("40"));
+		si3.addInput("ExtraLuggagePrice", List.of("100"));
+		si3.addInput("ExtraWindowSeatPrice", List.of("20"));
+
+		/*Change this value to select a scenario for testing
+		 * 1 - 2 planes 4 passengers
+		 * 2 - 3 planes 4 passengers all in the same plane
+		 * 3 - 1 plane  0 passengers
+		 * 4 - 0 plane  1 passenger
+		 * 5 - 1 plane  1 passenger
+		 * */
+		si3.addInput("Scenario", List.of("5"));
+
+		//Resets the stats container
+		StatisticsContainer.resetInstance(si3);
+
+		// Run the simulation
+		stats = runTest(si3);
+
+		// Post the finalized statistics
+		stats.printStatisticsContainer();
+
 	}
 }

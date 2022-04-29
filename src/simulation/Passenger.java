@@ -16,7 +16,7 @@ public class Passenger extends Unit implements Observer {
     private int money;
     private String flightName;
     private FlightList flightList;
-    private static Statistics passengerStats = StatisticsContainer.getInstance().addComponent("GlobalStats");
+    private static Statistics passengerStats;
 
     private Random r = new Random();
 
@@ -32,6 +32,7 @@ public class Passenger extends Unit implements Observer {
         int min = input.getIntegerInput("MinMoney");
         int max = input.getIntegerInput("MaxMoney");
         this.money = r.nextInt(max-min) + min;
+        passengerStats =  StatisticsContainer.getInstance().addComponent("GlobalStats");
 
         this.getStats().addStatistic(
                 "StartMoney",

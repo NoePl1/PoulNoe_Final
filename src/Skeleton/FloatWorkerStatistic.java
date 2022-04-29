@@ -12,7 +12,7 @@ public class FloatWorkerStatistic extends Statistic {
 	}
 
 	/**
-	 * Summarize all the valeus that were added to this statistic.
+	 * Summarize all the values that were added to this statistic.
 	 * @return an int that summarizes this statistic.
 	 */
 	public float summarize() {
