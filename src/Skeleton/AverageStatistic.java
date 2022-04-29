@@ -1,9 +1,6 @@
 package Skeleton;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-
-public class AverageStatistic extends Statistic{
+public class AverageStatistic extends Statistic {
 
     public AverageStatistic(String name) {
         super(name);
@@ -13,13 +10,13 @@ public class AverageStatistic extends Statistic{
     public float summarize() {
         float sum = 0;
         int div = 0;
-        for (Object i : this){
+        for (Object i : this) {
             sum += (int) i;
             div++;
         }
 
         if (div > 0)
-            return sum/div;
+            return sum / div;
         else
             return sum;
     }

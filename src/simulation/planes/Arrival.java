@@ -3,10 +3,11 @@ package simulation.planes;
 /**
  * Arrival State
  */
-public class Arrival extends State{
+public class Arrival extends State {
 
     /**
      * Constructor
+     *
      * @param plane plane
      */
     public Arrival(Plane plane) {
@@ -23,7 +24,7 @@ public class Arrival extends State{
         plane.unboardAll();
 
         try {
-            Thread.sleep(r.nextInt(100)+100);
+            Thread.sleep(r.nextInt(100) + 100);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

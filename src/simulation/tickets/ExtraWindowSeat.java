@@ -2,7 +2,7 @@ package simulation.tickets;
 
 public class ExtraWindowSeat extends Extra {
 
-    public ExtraWindowSeat(Ticket t){
+    public ExtraWindowSeat(Ticket t) {
         super(t);
     }
 

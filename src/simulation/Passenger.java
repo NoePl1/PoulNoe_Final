@@ -14,16 +14,17 @@ public class Passenger extends Unit implements Observer {
 
     private Ticket ticket;
     private int money;
-    private String flightName;
+    private final String flightName;
     private FlightList flightList;
     private static Statistics passengerStats;
 
-    private Random r = new Random();
+    private final Random r = new Random();
 
     /**
      * Constructor for Passenger.
-     * @param name name of the Passenger
-     * @param input input
+     *
+     * @param name       name of the Passenger
+     * @param input      input
      * @param flightName name of the flight
      */
     public Passenger(String name, SimulationInput input, String flightName) {
@@ -31,8 +32,8 @@ public class Passenger extends Unit implements Observer {
         this.flightName = flightName;
         int min = input.getIntegerInput("MinMoney");
         int max = input.getIntegerInput("MaxMoney");
-        this.money = r.nextInt(max-min) + min;
-        passengerStats =  StatisticsContainer.getInstance().addComponent("GlobalStats");
+        this.money = r.nextInt(max - min) + min;
+        passengerStats = StatisticsContainer.getInstance().addComponent("GlobalStats");
 
         this.getStats().addStatistic(
                 "StartMoney",
@@ -72,6 +73,7 @@ public class Passenger extends Unit implements Observer {
 
     /**
      * Method called when Passenger is notified.
+     *
      * @param plane plane to board/unobserve
      */
     @Override
@@ -86,7 +88,7 @@ public class Passenger extends Unit implements Observer {
      */
     @Override
     public void performAction() {
-        if (ticket == null){
+        if (ticket == null) {
             buyTicket();
         }
         if (ticket != null) {
@@ -150,7 +152,7 @@ public class Passenger extends Unit implements Observer {
 
             getStats().getStatistic("StartMoney").addValue(startMoney);
             getStats().getStatistic("EndMoney").addValue(money);
-            passengerStats.getStatistic("AverageMoneySpent").addValue(startMoney-money);
+            passengerStats.getStatistic("AverageMoneySpent").addValue(startMoney - money);
         }
     }
 }

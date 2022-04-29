@@ -12,9 +12,10 @@ public abstract class State {
 
     /**
      * Constructor for the State
+     *
      * @param plane plane
      */
-    public State(Plane plane){
+    public State(Plane plane) {
         this.plane = plane;
     }
 

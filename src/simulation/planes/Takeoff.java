@@ -7,6 +7,7 @@ public class Takeoff extends State {
 
     /**
      * Constructor
+     *
      * @param plane Plane
      */
     public Takeoff(Plane plane) {
@@ -20,7 +21,7 @@ public class Takeoff extends State {
     public void performAction() {
         try {
             plane.getRunway().getPlaneSem().acquire();
-            Thread.sleep(r.nextInt(40)+10);
+            Thread.sleep(r.nextInt(40) + 10);
             System.out.println(plane.getName() + " took off");
             plane.getRunway().getPlaneSem().release();
 

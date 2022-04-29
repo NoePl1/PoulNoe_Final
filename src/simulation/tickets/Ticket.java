@@ -7,14 +7,15 @@ import Skeleton.SimulationInput;
  */
 public abstract class Ticket {
 
-    private String flightName;
+    private final String flightName;
     protected SimulationInput input;
     private Boolean used;
 
     /**
      * Constructor for a Ticket without Extras
+     *
      * @param flightName name of the flight
-     * @param input input to set the price of the different options
+     * @param input      input to set the price of the different options
      */
     public Ticket(String flightName, SimulationInput input) {
         this.flightName = flightName;
@@ -24,6 +25,7 @@ public abstract class Ticket {
 
     /**
      * Getter for the flightName
+     *
      * @return the name of the flight
      */
     public String getFlightName() {
@@ -32,22 +34,24 @@ public abstract class Ticket {
 
     /**
      * Cost of the Ticket
+     *
      * @return the cost of the Ticket
      */
     public abstract int cost();
 
     /**
      * Checks if the Ticket is used
+     *
      * @return used
      */
-    public boolean isUsed(){
+    public boolean isUsed() {
         return used;
     }
 
     /**
      * Sets used to true
      */
-    public void use(){
+    public void use() {
         used = true;
     }
 }

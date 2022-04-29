@@ -8,9 +8,10 @@ public abstract class Extra extends Ticket {
 
     /**
      * Constructor for a Ticket with Extras
+     *
      * @param t Ticket
      */
-    public Extra(Ticket t){
+    public Extra(Ticket t) {
         super(t.getFlightName(), t.input);
         this.ticket = t;
     }

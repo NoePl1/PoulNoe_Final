@@ -10,14 +10,15 @@ import java.util.ArrayList;
 public class FlightList {
 
     private static volatile FlightList instance;
-    private ArrayList<Plane> flightList = new ArrayList<Plane>();
+    private final ArrayList<Plane> flightList = new ArrayList<Plane>();
 
-    private FlightList(){
+    private FlightList() {
     }
 
     /**
      * Creates a Single instance of FlightList. Is verified using a double lock in order to
      * avoid the creation of two instances of FlightList in case the threads are executed at the same time.
+     *
      * @return the instance of FligthList
      */
     public static FlightList getInstance() {
@@ -35,6 +36,7 @@ public class FlightList {
 
     /**
      * Getter for the list of Flights
+     *
      * @return an array of planes
      */
     public synchronized ArrayList<Plane> getFlightList() {
@@ -43,17 +45,19 @@ public class FlightList {
 
     /**
      * Adds a plane to the list
+     *
      * @param plane plane to add
      */
-    public synchronized void addPlane(Plane plane){
+    public synchronized void addPlane(Plane plane) {
         flightList.add(plane);
     }
 
     /**
      * Removes a plane from the list
+     *
      * @param plane plane to remove
      */
-    public synchronized void removePlane(Plane plane){
+    public synchronized void removePlane(Plane plane) {
         flightList.remove(plane);
     }
 }

@@ -7,6 +7,7 @@ public class Boarding extends State {
 
     /**
      * Constructor
+     *
      * @param plane plane
      */
     public Boarding(Plane plane) {

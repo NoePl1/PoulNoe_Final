@@ -2,7 +2,7 @@ package simulation.tickets;
 
 public class ExtraLuggage extends Extra {
 
-    public ExtraLuggage(Ticket t){
+    public ExtraLuggage(Ticket t) {
         super(t);
     }
 

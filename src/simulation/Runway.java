@@ -15,16 +15,17 @@ public class Runway {
     /**
      * Constructor for the Runway
      */
-    public Runway(){
+    public Runway() {
 
     }
 
     /**
      * Adds a Plane to the Runway
+     *
      * @param plane Plane to add to the Runway
      */
-    public void addPlane(Plane plane){
-        if (plane != null){
+    public void addPlane(Plane plane) {
+        if (plane != null) {
             this.plane = plane;
         }
     }
@@ -32,12 +33,13 @@ public class Runway {
     /**
      * Removes a Plane from the Runway
      */
-    public void removePlane(){
+    public void removePlane() {
         this.plane = null;
     }
 
     /**
      * Getter for the semaphore
+     *
      * @return returns the semaphore
      */
     public Semaphore getPlaneSem() {

@@ -8,8 +8,6 @@ package simulation;
 import Skeleton.SimulationInput;
 import simulation.planes.Plane;
 
-import java.lang.Thread;
-
 /**
  * The class that is responsible for running the simulation.
  * <p>
@@ -22,8 +20,8 @@ public class Matrix {
 
         switch (input.getIntegerInput("Scenario")) {
             case 1:
-                Plane plane1 = new Plane("AC817",'l', input, runway);
-                Plane plane2 = new Plane("AF213",'t', input, runway);
+                Plane plane1 = new Plane("AC817", 'l', input, runway);
+                Plane plane2 = new Plane("AF213", 't', input, runway);
                 Thread tp1 = new Thread(plane1);
                 Thread tp2 = new Thread(plane2);
 
@@ -58,9 +56,9 @@ public class Matrix {
                 break;
 
             case 2:
-                Plane plane4 = new Plane("AC817",'b', input, runway);
-                Plane plane5 = new Plane("AF213",'b', input, runway);
-                Plane plane6 = new Plane("TR344",'b', input, runway);
+                Plane plane4 = new Plane("AC817", 'b', input, runway);
+                Plane plane5 = new Plane("AF213", 'b', input, runway);
+                Plane plane6 = new Plane("TR344", 'b', input, runway);
                 Thread tp4 = new Thread(plane4);
                 Thread tp5 = new Thread(plane5);
                 Thread tp6 = new Thread(plane6);
@@ -98,7 +96,7 @@ public class Matrix {
                 break;
 
             case 3:
-                Plane plane3 = new Plane("BN123",'b', input, runway);
+                Plane plane3 = new Plane("BN123", 'b', input, runway);
                 Thread tp3 = new Thread(plane3);
 
                 tp3.start();
@@ -124,7 +122,7 @@ public class Matrix {
                 break;
 
             case 5:
-                Plane plane7 = new Plane("AC817",'t', input, runway);
+                Plane plane7 = new Plane("AC817", 't', input, runway);
                 Thread tp7 = new Thread(plane7);
 
                 Passenger pass10 = new Passenger("Gary", input, "AC817");

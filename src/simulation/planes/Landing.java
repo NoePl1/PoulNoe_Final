@@ -7,6 +7,7 @@ public class Landing extends State {
 
     /**
      * Constructor
+     *
      * @param plane plane
      */
     public Landing(Plane plane) {
@@ -20,7 +21,7 @@ public class Landing extends State {
     public void performAction() {
         try {
             plane.getRunway().getPlaneSem().acquire();
-            Thread.sleep(r.nextInt(40)+10);
+            Thread.sleep(r.nextInt(40) + 10);
             System.out.println(plane.getName() + " landed at origin airport.");
             plane.getRunway().getPlaneSem().release();
 

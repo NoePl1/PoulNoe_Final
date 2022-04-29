@@ -2,7 +2,7 @@ package simulation.tickets;
 
 public class ExtraInsurance extends Extra {
 
-    public ExtraInsurance(Ticket t){
+    public ExtraInsurance(Ticket t) {
         super(t);
     }
 

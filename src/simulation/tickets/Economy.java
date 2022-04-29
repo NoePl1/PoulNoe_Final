@@ -2,8 +2,6 @@ package simulation.tickets;
 
 
 import Skeleton.SimulationInput;
-import Skeleton.Statistic;
-import Skeleton.WorkerStatistic;
 
 public class Economy extends Ticket {
 
